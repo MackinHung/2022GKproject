@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>網路爬蟲demo</title>
+</head>
+<body>
+	{% if name == "" %}
+	<h1>安安你好，這裡是爬蟲專區</h1>
+	<input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+
+	<form method="post">
+		<input type="text" name="user">
+		<input type="submit" name="send" value="送出">
+	</form>	
+	<!-- <div id=loading style="position:absolute; left:423px; top:261px; width:227px; height:20px; z-index:1">
+		正在载入中,请稍等.....</div> -->
+	{% else %}
+	<p>{{name}}</p>
+	{% endif %}
+	
+    
+</body>
+</html>
+<script>
+	function closeDiv()
+	{
+	　　document.getElementById('loading').style.visibility='hidden';
+	}
+</script>
