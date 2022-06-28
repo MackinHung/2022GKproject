@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<!--只是重新整理不跳轉到其他頁面 -->
+		<!-- <meta charset="utf-8" http-equiv="refresh" content="5">
+		<title>網路爬蟲demo</title> -->
+		<!--定時轉到其他頁面 -->
+<meta charset="utf-8" http-equiv="refresh" content="29;url="> 
+<title>網路爬蟲demo</title>
+<!-- <meta charset="utf-8">
+<title>網路爬蟲demo</title> -->
+</head>
+<body>
+	{% if name == "" %}
+	<h1>安安你好，這裡是爬蟲專區</h1>
+    <input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+	<form method="post">
+		<p>請輸入關鍵字</p><input type="text" name="keyword">
+		<p>請輸入爬蟲頁數(預設10頁)</p><input type="text"  name="page_num">
+		<p>請輸入開始年份(預設2019)</p><input type="text"  name="year_start">
+		<p>請輸入結束年份(預設2022)</p><input type="text"  name="year_end">
+		<br>
+		<br>
+		<input type="submit" name="send" value="送出">
+	</form>	
+		<!-- {% if value == "送出" %}
+		<h3>我在爬蟲中</h3>
+		{% else %}
+		<h3>輸入點什麼吧</h3>
+		{% endif %} -->
+
+	<!-- <div id=loading style="position:absolute; left:423px; top:261px; width:227px; height:20px; z-index:1">
+		正在载入中,请稍等.....</div> -->
+	{% else %}
+	<p>{{name}}</p>
+	<input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+	{% endif %}
+	
+    
+</body>
+</html>
+<script>
+	function closeDiv()
+	{
+	　　document.getElementById('loading').style.visibility='hidden';
+	}
+</script>

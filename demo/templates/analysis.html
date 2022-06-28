@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>市場分析demo</title>
+</head>
+<body>
+    {% if name == "" %}
+    <h1>安安你好，這裡是畫圖專區</h1>
+    <input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+
+	<form method="post">
+        <h3>請輸入商品名稱</h3>
+		<input type="text" name="keyword">
+		<!-- <input type="submit" name="send" value="送出"> -->
+        <br>
+        <h3>請輸入品牌名稱(最多10個)</h3>
+        <input type="text" name="brand1">
+        <input type="text" name="brand2">
+        <input type="text" name="brand3">
+        <input type="text" name="brand4">
+        <input type="text" name="brand5">
+        <br>
+        <input type="text" name="brand6">
+        <input type="text" name="brand7">
+        <input type="text" name="brand8">
+        <input type="text" name="brand9">
+        <input type="text" name="brand10">
+        <br>
+        <br>
+		<input type="submit" name="send" value="送出">
+        <br>
+        <br>
+        <h4>關鍵字參考列表</h4>
+        <ul>
+
+            <li><font color="orange"><b>滴雞精</b></font></li><p>農純鄉 純煉 老協珍 田原香 白蘭氏 娘家 郭老師</p>
+            <li><font color="orange"><b>益生菌</b></font></li><p>農純鄉 純煉 大原生醫 三得利 橙姑娘 達摩本草 威德</p>
+            <li><font color="orange"><b>寶寶粥</b></font></li><p>農純鄉 桂格 傑西寶寶 田原香 郭老師 瀚克寶寶</p>
+            <li><font color="orange"><b>寶寶米餅</b></font></li><p>農純鄉 傑西寶寶 郭老師 瀚克寶寶 稻味 米大師</p>
+            <li><font color="orange"><b>寶寶肉鬆</b></font></li><p>農純鄉 義美 得意的一天 郭老師 新東陽 瀚克寶寶</p>
+            <li><font color="orange"><b>寶寶燉飯</b></font></li><p>農純鄉 傑西寶寶 郭老師 瀚克寶寶 鈞媽 芽米寶貝</p>
+            <li><font color="orange"><b>鱸魚精</b></font></li><p>農純鄉 安永鮮物 魚鱻森 健家特 真食補 品純萃</p>
+            <li><font color="orange"><b>黑豆杜仲茶</b></font></li><p>農純鄉 佳芳茶園 天仁茗茶 曼寧 義美生機 御復珍</p>
+            <li><font color="orange"><b>膠原蛋白</b></font></li><p>農純鄉 三得利 好立善 明治 天使娜拉 台鹽生技</p>
+            <li><font color="orange"><b>桂圓紅棗養生木耳飲</b></font></li><p>純煉 O卡桑 澎沛 翰方御品 谷溜谷溜</p>
+        </ul>
+
+	</form>
+	
+	{% else %}
+	<p>{{name}}</p>
+    <input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="static/{{keyword}}_文字雲.png" alt="圖片" />
+    <img src="static/{{keyword}}_正負評價比_各品牌.png/" alt="圖片" />
+    <img src="static/{{keyword}}_品牌網路聲量圖.png/" alt="圖片" />
+    <img src="static/{{keyword}}_網友在意面向圖.png/" alt="圖片" />
+    <!-- <button value="測試連結" onclick="displayResult()">讀取圖片</button> -->
+    {% endif %}
+</body>
+</html>

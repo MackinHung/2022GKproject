@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<!--只是重新整理不跳轉到其他頁面 -->
+		<!-- <meta charset="utf-8" http-equiv="refresh" content="5">
+		<title>網路爬蟲demo</title> -->
+		<!--定時轉到其他頁面 -->
+<meta charset="utf-8" http-equiv="refresh" content="29;url="> 
+<title>網路爬蟲demo</title>
+<!-- <meta charset="utf-8">
+<title>網路爬蟲demo</title> -->
+</head>
+<body>
+	{% if name == "" %}
+	<h1>安安你好，這裡是爬蟲專區</h1>
+    <input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+	<form method="post">
+		<p>請輸入關鍵字</p><input type="text" name="keyword">
+		<p>請輸入爬蟲頁數(預設10頁)</p><input type="text"  name="page_num">
+		<p>請輸入開始年份(預設2019)</p><input type="text"  name="year_start">
+		<p>請輸入結束年份(預設2022)</p><input type="text"  name="year_end">
+		<br>
+		<br>
+		<input type="submit" name="send" value="送出">
+		
+		<h4>關鍵字參考列表</h4>
+        <ul>
+
+            <li><font color="orange"><b>滴雞精</b></font></li><p>農純鄉 純煉 老協珍 田原香 白蘭氏 娘家 郭老師</p>
+            <li><font color="orange"><b>益生菌</b></font></li><p>農純鄉 純煉 大原生醫 三得利 橙姑娘 達摩本草 威德</p>
+            <li><font color="orange"><b>寶寶粥</b></font></li><p>農純鄉 桂格 傑西寶寶 田原香 郭老師 瀚克寶寶</p>
+            <li><font color="orange"><b>寶寶米餅</b></font></li><p>農純鄉 傑西寶寶 郭老師 瀚克寶寶 稻味 米大師</p>
+            <li><font color="orange"><b>寶寶肉鬆</b></font></li><p>農純鄉 義美 得意的一天 郭老師 新東陽 瀚克寶寶</p>
+            <li><font color="orange"><b>寶寶燉飯</b></font></li><p>農純鄉 傑西寶寶 郭老師 瀚克寶寶 鈞媽 芽米寶貝</p>
+            <li><font color="orange"><b>鱸魚精</b></font></li><p>農純鄉 安永鮮物 魚鱻森 健家特 真食補 品純萃</p>
+            <li><font color="orange"><b>黑豆杜仲茶</b></font></li><p>農純鄉 佳芳茶園 天仁茗茶 曼寧 義美生機 御復珍</p>
+            <li><font color="orange"><b>膠原蛋白</b></font></li><p>農純鄉 三得利 好立善 明治 天使娜拉 台鹽生技</p>
+            <li><font color="orange"><b>桂圓紅棗養生木耳飲</b></font></li><p>純煉 O卡桑 澎沛 翰方御品 谷溜谷溜</p>
+        </ul>
+	</form>	
+		<!-- {% if value == "送出" %}
+		<h3>我在爬蟲中</h3>
+		{% else %}
+		<h3>輸入點什麼吧</h3>
+		{% endif %} -->
+
+	<!-- <div id=loading style="position:absolute; left:423px; top:261px; width:227px; height:20px; z-index:1">
+		正在载入中,请稍等.....</div> -->
+	{% else %}
+	<p>{{name}}</p>
+	<input type="button" value="首頁" onclick="location.href='/'">
+	<input type="button" value="爬蟲" onclick="location.href='/crawler'">
+	<input type="button" value="畫圖" onclick="location.href='/analysis'">
+	{% endif %}
+	
+</body>
+</html>
+<script>
+	function closeDiv()
+	{
+	　　document.getElementById('loading').style.visibility='hidden';
+	}
+</script>
